@@ -2,7 +2,7 @@
 
 How much money does each business make?
 
-How much are they willing to give us?
+How much are they willing to give us?\
 How large is their customer base?
 How much does each customer spend?
 Are their customers loyal?
