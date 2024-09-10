@@ -55,6 +55,25 @@ def download_synthetic():
 
     print("Successfully downloaded transaction files.")
 
+def download_abs():
+    """
+    """
+
+    output_path = "../data/tables/abs"
+
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+        
+    files = ["ABS_2021.csv", "postcode_correspondences_2021.csv", "SA2_2021_AUST_GDA2020.shp"]
+
+    for f in files:
+        # define source and destination
+        from_url = f"https://d29z7mpjjgf7tr.cloudfront.net/abs/{f}"
+        to_file = f"{output_path}/{f}"
+
+        urlretrieve(from_url, to_file) # download to relevant directory
+
+    print("Successfully downloaded ABS files.")
 
 
 def date_range(start_date, end_date):
