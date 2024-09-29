@@ -6,7 +6,7 @@ def download_synthetic():
     """
     """
 
-    output_path = "../data/tables/synthetic/"
+    output_path = "../data/tables/"
 
     if not os.path.exists(output_path):
         os.makedirs(output_path)
