@@ -6,8 +6,8 @@ def download_synthetic():
     """
     """
 
-    output_path = "../data/tables/"
-
+    output_path = "../data/tables/synthetic/"
+    
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     
@@ -38,6 +38,8 @@ def download_synthetic():
     }
 
     # download transaction files
+    # files are downloaded individually instead of as a folder...
+    # ...since Cloudfront doesn't allow for download of directories
     for date in dates:
 
         if date <= "2021-08-27": # end point for first snapshot of data
