@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 
 def download_synthetic():
     """
+    Downloads synthetic files.
     """
 
     output_path = "../data/tables/synthetic/"
@@ -53,12 +54,13 @@ def download_synthetic():
         urlretrieve(f"https://d29z7mpjjgf7tr.cloudfront.net/transactions/order_datetime={date}/{url}",
                     f"{transaction_output_path}{date}.parquet")
         
-        print(f"Downloaded {date}")
+        # print(f"Downloaded {date}")
 
     print("Successfully downloaded transaction files.")
 
 def download_abs():
     """
+    Downloads ABS files.
     """
 
     output_path = "../data/tables/abs"
@@ -66,7 +68,9 @@ def download_abs():
     if not os.path.exists(output_path):
         os.makedirs(output_path)
         
-    files = ["ABS_2021.csv", "postcode_correspondences_2021.csv", "SA2_2021_AUST_GDA2020.shp"]
+    files = ["ABS_2021.csv", "postcode_correspondences_2021.csv", "SA2_2021_AUST_GDA2020.xml",
+             "SA2_2021_AUST_GDA2020.shx", "SA2_2021_AUST_GDA2020.shp", "SA2_2021_AUST_GDA2020.prj",
+             "SA2_2021_AUST_GDA2020.dbf"]
 
     for f in files:
         # define source and destination
@@ -80,6 +84,7 @@ def download_abs():
 
 def date_range(start_date, end_date):
     """
+    Gives list of dates from start_date to end_date.
     """
 
     start = datetime.strptime(start_date, "%Y-%m-%d")
